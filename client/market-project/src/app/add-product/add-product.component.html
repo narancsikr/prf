@@ -1,0 +1,24 @@
+<div class="login-container">
+    <form class="login-form" [formGroup]="productForm" (ngSubmit)="onSub()">
+        
+        <input formControlName="name" type="text" placeholder="Terméknév" />
+        <input formControlName="description" type="text" placeholder="Leírás" />
+        <input formControlName="price" type="text" placeholder="Ár" />
+       
+        <div class="buttons">
+            <button type="submit">Upload</button>
+        </div>
+        <div class="buttons">
+            <button type="button" (click)="navigate('/product-management')">Products</button>
+        </div>
+
+        <div class="buttons">
+            <button type="reset" (click)="logout()">Logout</button>
+        </div>
+         <!--
+        <div class="buttons">
+            <button type="reset" (click)="goBack()">Back</button>
+        </div>
+        -->
+    </form>
+</div>

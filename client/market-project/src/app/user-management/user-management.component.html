@@ -1,0 +1,40 @@
+<div class="table-container" *ngIf="users && users.length; else noUsersTemplate">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Nickname</th>
+                <th>Role</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user._id}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.address}}</td>
+                <td>{{user.nickname}}</td>
+                <td>{{user.role}}</td>
+               <td> <button type="button" (click)="deleteUser(user._id)">Delete</button></td>
+            
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ng-template #noUsersTemplate>
+    <p>No users available.</p>
+</ng-template>
+<div class="buttons">
+            <button type="button" (click)="navigate('/add-product')">Add product</button>
+</div>
+
+<div class="buttons">
+    <button type="reset" (click)="logout()">Logout</button>
+</div>
+<!-- <p *ngFor="let u of users"> {{u.role}}, </p> -->
+<!-- {{users.role}} -->
+
